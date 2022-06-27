@@ -22,7 +22,7 @@
 - **Web Browser** : `Firefox`
 
 ## Installation
-- **Get the files from** : [Ko-fi :coffee:](https://ko-fi.com/s/69957c0587)
+- **Get the files from** : [Ko-fi :coffee:](https://ko-fi.com/s/69957c0587) <sup>[**`Why Paid`**](https://github.com/adi1090x/adi1090x/blob/master/WHY.md)</sup>
 - Extract The file **river.tar.gz** with : `tar -xzvf river.tar.gz`
 - If you are using **`Archcraft`** as your OS, You can just install the provided package with : `sudo pacman -U archcraft-river-1.0-1-any.pkg.tar.zst`
 - If you want to install this setup on _Arch Linux_ or on any _other distro_, follow the points below :
