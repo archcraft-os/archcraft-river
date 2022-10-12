@@ -24,7 +24,7 @@
 ## Installation
 - **Get the files from** : [Ko-fi :coffee:](https://ko-fi.com/s/69957c0587) <sup>[**`Why Paid`**](https://github.com/adi1090x/adi1090x/blob/master/WHY.md)</sup>
 - Extract The file **river.tar.gz** with : `tar -xzvf river.tar.gz`
-- If you are using **`Archcraft`** as your OS, You can just install the provided package with : `sudo pacman -U archcraft-river-1.0-1-any.pkg.tar.zst`
+- If you are using **`Archcraft`** as your OS, You can just install the provided package with : `sudo pacman -U archcraft-river-1.0-2-any.pkg.tar.zst`
 - If you want to install this setup on _Arch Linux_ or on any _other distro_, follow the points below :
   - Install the following programs on your computer: `river` `lua` `lua-posix` `wlr-randr` `swaybg` `swayidle` `swaylock` `wlroots` `wl-clipboard` `waybar` `wofi` `foot` `mako` `grim` `slurp` `wf-recorder` `light` `yad` `thunar` `geany` `mpv` `mpd` `mpc` `viewnior` `imagemagick` `xfce-polkit` `xorg-xwayland`
   - After installing programs above, Create river directory in **`~/.config`** : `mkdir -p ~/.config/river`
