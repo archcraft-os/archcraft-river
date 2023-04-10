@@ -13,8 +13,8 @@
 - **Operating System** : `Archcraft`
 - **Window Manager** : `River`
 - **Status Bar** : `Waybar`
-- **Launcher** : `Wofi`
-- **Session Manager** : `Wofi Applet`
+- **Launcher** : `Rofi` / `Wofi`
+- **Session Manager** : `Rofi` / `Wofi`
 - **Notifications** : `Mako`
 - **Terminal** : `Foot`
 - **File Manager** : `Thunar`
@@ -24,9 +24,9 @@
 ## Installation
 - **Get the files from** : [Ko-fi :coffee:](https://ko-fi.com/s/69957c0587) <sup>[**`Why Paid`**](https://github.com/adi1090x/adi1090x/blob/master/WHY.md)</sup>
 - Extract The file **river.tar.gz** with : `tar -xzvf river.tar.gz`
-- If you are using **`Archcraft`** (`Required: 2023 or later`) as your OS, You can just install the provided package with : `sudo pacman -U archcraft-river-2.0-0-any.pkg.tar.zst`
+- If you are using **`Archcraft`** (`Required: 2023 or later`) as your OS, You can just install the provided package with : `sudo pacman -U archcraft-river-3.0-0-any.pkg.tar.zst`
 - If you want to install this setup on _Arch Linux_ or on any _other distro_, follow the points below :
-  - Install the following programs on your computer: `river` `lua` `lua-posix` `wlr-randr` `swaybg` `swayidle` `swaylock` `wlroots` `wl-clipboard` `waybar` `wofi` `foot` `mako` `grim` `slurp` `wf-recorder` `light` `yad` `thunar` `geany` `mpv` `mpd` `mpc` `viewnior` `imagemagick` `xfce-polkit` `xorg-xwayland` `xdg-desktop-portal-wlr`
+  - Install the following programs on your computer: `river` `lua` `lua-posix` `wlr-randr` `swaybg` `swayidle` `swaylock` `wlroots` `wl-clipboard` `waybar` `wofi` `foot` `mako` `grim` `slurp` `wf-recorder` `light` `yad` `thunar` `geany` `mpv` `mpd` `mpc` `viewnior` `imagemagick` `xfce-polkit` `xorg-xwayland` `xdg-desktop-portal-wlr` `playerctl`
   - After installing programs above, Create river directory in **`~/.config`** : `mkdir -p ~/.config/river`
   - Copy Everything from _dotfiles_ to **`~/.config/river`** : `cp -r ./dotfiles/* ~/.config/river/` 
   - Logout and login to your amazingly configured River WM.
@@ -47,12 +47,21 @@ Install the following `theme`, `icon pack`, `cursors` and `fonts` for overall ap
     ├── foot          : Terminal config
     ├── mako          : Notification daemon config
     │   └── icons     : Notification icons
+    ├── rofi          : Rofi config files
     ├── scripts       : Various scripts for functionality
     ├── wallpapers    : Wallpapers
     ├── waybar        : Statusbar config
     ├── wofi          : Launcher, Powermenu config
     └── init          : River init file (main config)
 ```
+
+> By default, **`wofi`** is used as app launcher.
+>
+> But, If you want to use **rofi** instead of **wofi**, First make sure you install the [wayland fork of rofi](https://github.com/lbonn/rofi). Edit the config file `~/.config/river/init` and uncomment rofi keybindings (and, comment the wofi stuff as well).
+
+> By default, **`MPD`** is used on waybar for music.
+>
+> But, If you want to use **Spotify** instead of **MPD**, Edit the config file `~/.config/river/waybar/config` and uncomment the spotify module (and, comment the MPD module as well).
 
 ## Keybindings
 
