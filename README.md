@@ -1,6 +1,6 @@
 <h1 align="center">RIVER</h1>
 
-[![River Video](screenshots/River_4.png)](https://youtu.be/MwnK6arB2Rc)
+[![River Video](screenshots/river_4.png)](https://youtu.be/MwnK6arB2Rc)
 
 <p align="center">The ultimate River configuration (A Desktop Environment Like Experience)</p>
 
@@ -24,7 +24,7 @@
 ## Installation
 - **Get the files from** : [Ko-fi :coffee:](https://ko-fi.com/s/69957c0587) <sup>[**`Why Paid`**](https://github.com/adi1090x/adi1090x/blob/master/WHY.md)</sup>
 - Extract The file **river.tar.gz** with : `tar -xzvf river.tar.gz`
-- If you are using **`Archcraft`** (`Required: 2023 or later`) as your OS, You can just install the provided package with : `sudo pacman -U archcraft-river-3.0-0-any.pkg.tar.zst`
+- If you are using **`Archcraft`** (`Required: 2023 or later`) as your OS, You can just install the provided package with : `sudo pacman -U archcraft-river-3.0-3-any.pkg.tar.zst`
 - If you want to install this setup on _Arch Linux_ or on any _other distro_, follow the points below :
   - Install the following programs on your computer: `river` `lua` `lua-posix` `wlr-randr` `swaybg` `swayidle` `swaylock` `wlroots` `wl-clipboard` `waybar` `wofi` `foot` `mako` `grim` `slurp` `wf-recorder` `light` `yad` `thunar` `geany` `mpv` `mpd` `mpc` `viewnior` `imagemagick` `xfce-polkit` `xorg-xwayland` `xdg-desktop-portal-wlr` `playerctl`
   - After installing programs above, Create river directory in **`~/.config`** : `mkdir -p ~/.config/river`
@@ -62,6 +62,29 @@ Install the following `theme`, `icon pack`, `cursors` and `fonts` for overall ap
 > By default, **`MPD`** is used on waybar for music.
 >
 > But, If you want to use **Spotify** instead of **MPD**, Edit the config file `~/.config/river/waybar/config` and uncomment the spotify module (and, comment the MPD module as well).
+
+## Nvidia
+If you're on `Archcraft` and install the provided package, There's nothing else you need to do in order to run it on Nvidia machine. The package's post_installation script does it all, And the compositor should work fine.
+
+If you're running any other distribution and want to install this setup on your Nvidia machine, You need to do some tweaking. In this guide, I'm assuing you're using **Arch Linux**. Follow the steps below to make this wayland compositor work on Nvidia :
+
+- Install **Nvidia Drivers** on your system. [NVIDIA](https://wiki.archlinux.org/title/NVIDIA) 
+- Edit `/etc/mkinitcpio.conf` file and add **`nvidia`** kernel modules
+```
+MODULES="nvidia nvidia_modeset nvidia_uvm nvidia_drm"
+```
+
+- In the same file, Remove `kms` hook from hooks array if present.
+- Rebuild your initrd file with : `sudo mkinitcpio -P linux`
+- Edit `/etc/default/grub` file and add **`nvidia_drm.modeset=1`** kernel parameter for Nvidia
+```
+GRUB_CMDLINE_LINUX_DEFAULT="quiet splash nvidia_drm.modeset=1 ..."
+```
+
+- Update your grub config file with : `sudo grub-mkconfig -o /boot/grub/grub.cfg`
+- Reboot your Nvidia Machine and login to your wayland compositor, It should work now.
+
+More Information: [NVIDIA#Installation](https://wiki.archlinux.org/title/NVIDIA#Installation), [NVIDIA#DRM_kernel_mode_setting](https://wiki.archlinux.org/title/NVIDIA#DRM_kernel_mode_setting)
 
 ## Keybindings
 
@@ -117,26 +140,13 @@ Install the following `theme`, `icon pack`, `cursors` and `fonts` for overall ap
 
 ## Screenshots
 
-| App Launcher (wofi) | Powermenu (wofi applet) |
+| Screenshot 1 | Screenshot 2 |
 | --- | --- |
-|![sway](screenshots/River_1.png)|![sway](screenshots/River_2.png)|
+|![river](screenshots/river_1.png)|![river](screenshots/river_2.png)|
 
-| Terminal (foot) | Floating Mode (thunar, geany, fetch) |
+| Screenshot 3 | Screenshot 4 |
 | --- | --- |
-|![sway](screenshots/River_3.png)|![sway](screenshots/River_4.png)|
-
-| Tile Layout 1 | Tile Layout 2 |
-| --- | --- |
-|![sway](screenshots/River_5.png)|![sway](screenshots/River_6.png)|
-
-| Tile Layout 3 | Tile Layout 4 |
-| --- | --- |
-|![sway](screenshots/River_7.png)|![sway](screenshots/River_8.png)|
-
-
-## FYI
-- May or may not work on [**`Nvidia`**](https://wiki.archlinux.org/title/Sway#Installation), See [wayland requirements](https://wiki.archlinux.org/title/wayland#Requirements).
-- Thank you for your support.
+|![river](screenshots/river_3.png)|![river](screenshots/river_4.png)|
 
 ---
 
